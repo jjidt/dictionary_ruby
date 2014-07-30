@@ -28,7 +28,7 @@ puts "\nEnter X to exit"
         puts "\n"
         puts "Enter E to edit definition"
         puts "Enter M to return to main menu"
-        puts "Enter D to delete the fuk out of that word"
+        puts "Enter D to delete the word"
         user_selection2 = gets.chomp.downcase
         if user_selection2 == "e"
           puts "What is the new definition for #{Term.terms[user_word].word}"
