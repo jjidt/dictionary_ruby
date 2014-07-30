@@ -21,6 +21,23 @@ puts "\nEnter X to exit"
     puts "WORDS: \n \n"
     puts Term.terms.keys
     puts "\n\n\n"
+    puts "Enter a word to get definition/edit"
+    user_word = gets.chomp
+      if Term.terms[user_word]
+        puts "\nWORD:  #{Term.terms[user_word].word}     DEFINITION:  #{Term.terms[user_word].def}"
+        puts "\n"
+        puts "Enter E to edit definition"
+        puts "Enter M to return to main menu"
+        puts "Enter D to delete the fuk out of that word"
+        user_selection2 = gets.chomp.downcase
+        if user_selection2 == "e"
+          puts "What is the new definition for #{Term.terms[user_word].word}"
+          new_definition = gets.chomp
+          Term.terms[user_word].def = new_definition
+        elsif user_selection2 == "d"
+          Term.terms.delete(user_word)
+        end
+      end
   elsif user_selection == "x"
     break
   end
